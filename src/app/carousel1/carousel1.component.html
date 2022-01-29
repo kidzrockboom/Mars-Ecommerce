@@ -1,0 +1,13 @@
+<!-- A carosel to display images for our home page -->
+<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="img-wrapper">
+      <img [src]="image" width="1600" height="550" alt="Random slide">
+    </div>
+    
+  </ng-template>
+</ngb-carousel>
+
+<hr> 
+
+       

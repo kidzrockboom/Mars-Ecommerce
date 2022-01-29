@@ -1,0 +1,6 @@
+/* Make the image fit the Div */
+img{
+    width: 100%;
+    object-fit: cover;
+    
+}
