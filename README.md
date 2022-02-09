@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Coursework2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
@@ -30,5 +30,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # mars-shoes
 An ecommerce platform for selling shoes
 
-Built using Angular frontend and a mongodb database running on Apache. This was a project to learn the basics and intermediate skills of the angular framework.
+Built using Angular frontend and a mongodb database running on Apache. This was a project to learn the basics and intermediate skills of the angular framework and also to get a better understanding of Typescript.
 >>>>>>> 9a5126f1cae86979568485b21c5e831fe778e227
