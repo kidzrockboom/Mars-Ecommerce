@@ -1,0 +1,37 @@
+ /* @import "~@angular/material/prebuilt-themes/indigo-pink.css";  */
+
+.card-container{
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.seperator {
+    display: flex;
+    justify-content: space-evenly;
+    height: 70px;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.seperator p {
+    padding-left: 40px;
+    padding-top: 23px;
+    color: azure;
+    font-size: 25px;
+}
+
+mat-card img{
+    height: 625px;
+}
+
+.nav-cards {
+    max-width: 450px;
+    max-height: fit-content;
+}

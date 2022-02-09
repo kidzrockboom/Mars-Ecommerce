@@ -1,0 +1,25 @@
+
+<div class="seperator">
+    <p>
+       THE BEST IN FOOTWARE SELECTIONS
+    </p>
+</div>
+
+
+<div class="card-container">
+
+
+<div *ngFor="let card of cards">
+<a routerLink="{{card.link}}" >
+<mat-card class="nav-cards" >
+  <img mat-card-image src="{{card.image}}"  alt="Men">
+  <mat-card-content>
+    <h2>
+      {{card.name}}
+    </h2>
+  </mat-card-content>
+</mat-card>
+</a>
+</div>
+
+</div>

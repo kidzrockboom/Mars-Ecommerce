@@ -12,5 +12,5 @@ export class NavbarComponent {
   onSubmit(): void {
     console.log(this.placeholder);
   }
-
+   // CHANGE CAROUSEL IMAGES TO FOCUS ON SHOES
 }
