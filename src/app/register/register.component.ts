@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -10,34 +10,26 @@ export class RegisterComponent implements OnInit {
 
   //Creating a register form for a Dialog pop-up using angular reactive forms
 
-  regForm!: FormGroup;
-
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit(): void {
-    this.initializeForm();
-  }
   // Creating the pattern for the form and the required validations
-  initializeForm(): void {
-    this.regForm = this.fb.group({
-      firstname: ['',
-      Validators.required,
-    ],
-      lastname: ['',
-      Validators.required,
-    ],
-      email: ['',
-      Validators.required,
-      Validators.email
-    ],
-      password: ['',
-      Validators.required,
-      Validators.minLength(8),
-      Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$")
-    ]
-    })
+  createFormGroup() {
+    return new FormGroup({
+      firstname: new FormControl('', [Validators.required]),
+      lastname: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, 
+        Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")])
+    });
+  }
+
+  regForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { 
+    this.regForm = this.createFormGroup();
 
   }
+
+  ngOnInit(): void {}
+  
   get email() {
     return this.regForm.get('email');
   }
@@ -46,5 +38,8 @@ export class RegisterComponent implements OnInit {
     return this.regForm.get('password');
   }
   
+  onSubmit() {
+    
+  }
 
 }
