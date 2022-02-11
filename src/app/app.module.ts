@@ -21,6 +21,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import { CmsComponent } from './cms/cms.component';
+import { MatTableModule } from '@angular/material/table'
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeCardsComponent,
     Navbar2Component,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    CmsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [NgbCarouselConfig],
   bootstrap: [AppComponent]

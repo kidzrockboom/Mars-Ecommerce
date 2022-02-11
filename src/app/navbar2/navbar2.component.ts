@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 
 @Component({
@@ -17,5 +18,12 @@ export class Navbar2Component {
       height: '600px',
       width: '400px'
     });
+  }
+
+  openLogin() {
+    this.dialog.open(LoginComponent, {
+      height: '400px',
+      width: '350px'
+    })
   }
 }

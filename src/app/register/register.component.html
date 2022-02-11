@@ -35,7 +35,7 @@
     <mat-form-field appearance="outline">
         <input matInput type="password" placeholder="password" formControlName="password" autocomplete="new-password">
 
-        <mat-hint align="end">Must have one letter, one number, and one special character</mat-hint>
+        <mat-hint align="end">Must have one uppercaseletter, one lowercase letter, one number, and one special character</mat-hint>
         <mat-error *ngIf="(password?.dirty || password?.touched) && password?.invalid" class="has-text-danger">
             You need a stronger Password
         </mat-error>

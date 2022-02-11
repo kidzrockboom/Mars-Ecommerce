@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
   
+   // Getters for the form values to display custom error messages
   get email() {
     return this.regForm.get('email');
   }
@@ -38,6 +39,7 @@ export class RegisterComponent implements OnInit {
     return this.regForm.get('password');
   }
   
+  // Store the customers registration details in the database
   onSubmit() {
     
   }
