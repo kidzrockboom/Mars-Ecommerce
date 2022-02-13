@@ -3,6 +3,9 @@ import { BackendService } from '../backend.service';
 import { Shoes } from '../shoe';
 import { Observable } from 'rxjs';
 
+import { MatDialog } from '@angular/material/dialog';
+import { AddFormComponent } from '../add-form/add-form.component';
+
 @Component({
   selector: 'app-cms',
   templateUrl: './cms.component.html',
@@ -19,7 +22,8 @@ export class CmsComponent implements OnInit {
   success = "";
   error = "";
 
-  constructor(private backendService: BackendService) { }
+  constructor(private backendService: BackendService, 
+              public dialog: MatDialog) { }
 
 
 
@@ -37,6 +41,13 @@ export class CmsComponent implements OnInit {
         console.error(err);
         this.error = err;
       }
+    })
+  }
+
+  onAdd() {
+    this.dialog.open(AddFormComponent, {  
+      height: '600px',
+      width: '400px'
     })
   }
 

@@ -9,8 +9,10 @@ import { map } from 'rxjs/operators';
 })
 export class BackendService {
 
-  // Url for the server 
-  getAllUrl: String = 'http://localhost/connect.php'; 
+  // Urls for the each serverSide script 
+  getAllUrl: String = 'http://localhost/connect.php';
+  addOneUrl: String = 'http://localhost/addItem.php';
+
 
   // Constructor creates a http dependency
   constructor(private http: HttpClient) { }
@@ -23,6 +25,14 @@ export class BackendService {
         return res;
       })
     );
+  }
+
+  addOne(data: any) {
+    return this.http.post(`${this.addOneUrl}`, data, {responseType: 'text'}).pipe(
+      map((res: any) => {
+        return res;
+      })
+    )
   }
 
 }

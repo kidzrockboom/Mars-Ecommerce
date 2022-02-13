@@ -22,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { CmsComponent } from './cms/cms.component';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { AddFormComponent } from './add-form/add-form.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatTableModule } from '@angular/material/table'
     Navbar2Component,
     RegisterComponent,
     LoginComponent,
-    CmsComponent
+    CmsComponent,
+    AddFormComponent
   ],
   imports: [
     BrowserModule,

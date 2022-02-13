@@ -1,0 +1,73 @@
+
+<!-- Add item to backend form -->
+<div class="addForm">
+
+    <form [formGroup]="addForm" (ngSubmit)="onAdd()" [hidden]="success">
+      <!-- value: {{regForm.value | json }} -->
+  
+      <!-- Name -->
+      <mat-form-field>
+        <mat-label> Name </mat-label>
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+  
+      <!-- Size -->
+      <mat-form-field>
+        <mat-label> Size </mat-label>
+        <input matInput placeholder="Size" formControlName="size" />
+      </mat-form-field>
+  
+      <!-- Price -->
+      <mat-form-field>
+        <mat-label> Price </mat-label>
+        <input matInput placeholder="Price" formControlName="price" />
+      </mat-form-field>
+  
+      <!-- Gender -->
+      <mat-form-field>
+        <mat-label> Gender </mat-label>
+        <input matInput placeholder=" Gender" formControlName="gender" />
+      </mat-form-field>
+
+      <!-- Discount -->
+      <mat-form-field>
+        <mat-label> discount </mat-label>
+        <input matInput placeholder="Discount" formControlName="discount" />
+      </mat-form-field>
+
+      <!-- Image -->
+      <mat-form-field>
+        <mat-label> Image</mat-label>
+        <input matInput placeholder="Image" formControlName="image" />
+      </mat-form-field>
+
+      <!-- Stock -->
+      <mat-form-field>
+        <mat-label> Stock</mat-label>
+        <input matInput placeholder="Stock" formControlName="stock" />
+      </mat-form-field>
+
+      <!-- Type -->
+      <mat-form-field>
+        <mat-label> Type</mat-label>
+        <input matInput placeholder="Type" formControlName="type" />
+      </mat-form-field>
+
+      <!-- KeyWords-->
+      <mat-form-field>
+        <mat-label>KeyWords</mat-label>
+        <input matInput placeholder="KeyWords" formControlName="keywords" />
+      </mat-form-field>
+  
+      <br />
+      <div class="regBtn" align="end">
+        <button mat-raised-button [disabled]="addForm.invalid" color="primary">
+          Add Item
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="success">
+    Submission Successful
+  </div>

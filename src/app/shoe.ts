@@ -8,5 +8,5 @@ export interface Shoes {
     image?: String;
     stock?: number;
     type?: String;
-    keywords?: Array<any>;
+    keywords?: String;
 }
