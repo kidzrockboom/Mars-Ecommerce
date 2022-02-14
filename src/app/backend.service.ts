@@ -12,7 +12,7 @@ export class BackendService {
   // Urls for the each serverSide script 
   getAllUrl: String = 'http://localhost/connect.php';
   addOneUrl: String = 'http://localhost/addItem.php';
-
+  deleteOneUrl: String = 'http://localhost/delete.php';
 
   // Constructor creates a http dependency
   constructor(private http: HttpClient) { }
@@ -29,6 +29,16 @@ export class BackendService {
 
   addOne(data: any) {
     return this.http.post(`${this.addOneUrl}`, data, {responseType: 'text'}).pipe(
+      map((res: any) => {
+        return res;
+      })
+      
+    )
+  }
+
+  deleteOne(data: any) {
+    console.log(JSON.stringify(data));
+    return this.http.post(`${this.deleteOneUrl}`, JSON.stringify(data), {responseType: 'text'}).pipe(
       map((res: any) => {
         return res;
       })

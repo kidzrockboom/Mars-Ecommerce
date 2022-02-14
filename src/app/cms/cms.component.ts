@@ -16,7 +16,7 @@ export class CmsComponent implements OnInit {
   id: number = 0;
 
   displayedColumns: String[] = ['position', 'name', 'size', 'price', 'gender',
-                                'discount', 'stock', 'type'];
+                                'discount', 'stock', 'type', 'edit', 'delete'];
 
   shoes: Shoes[]= [];
   success = "";
@@ -49,6 +49,23 @@ export class CmsComponent implements OnInit {
       height: '600px',
       width: '400px'
     })
+  }
+
+  onEdit(){
+
+  }
+
+  onDelete(element: any) {
+    let data = element.$oid;
+    this.backendService.deleteOne(data).subscribe({
+      next: (res) => {
+        console.log(res)
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
+    // Refresh the form
   }
 
 }
