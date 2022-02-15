@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { MatDialog } from '@angular/material/dialog';
 import { AddFormComponent } from '../add-form/add-form.component';
+import { EditFormComponent } from '../edit-form/edit-form.component';
 
 @Component({
   selector: 'app-cms',
@@ -48,11 +49,15 @@ export class CmsComponent implements OnInit {
     this.dialog.open(AddFormComponent, {  
       height: '600px',
       width: '400px'
-    })
+    });
   }
 
-  onEdit(){
-
+  onEdit(element: any){
+    this.dialog.open(EditFormComponent, {
+      height: '600px',
+      width: '400px',
+      data: element
+    });
   }
 
   onDelete(element: any) {

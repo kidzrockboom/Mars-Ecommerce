@@ -1,5 +1,5 @@
 export interface Shoes {
-    _id?: object;
+    id?: object;
     name?: String;
     size?: number;
     price?: number;

@@ -1,0 +1,22 @@
+/* Change the size of the form field */
+mat-form-field {
+    display: block;
+    margin-left: 30px;
+    margin-top: 25px;
+    width: 80%;
+}
+
+/* Push the register button to the right */
+.regBtn {
+    padding-right: 40px;
+}
+
+/* Background colour for the forms */
+.mat-accent {
+    background-color: #42A948 !important;
+}
+
+/* Background colour for when the user puts the valid input */
+.ng-valid.required {
+    background-color: lightgreen;
+}

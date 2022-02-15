@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Shoes } from './shoe';
 
 
 
@@ -13,6 +14,8 @@ export class BackendService {
   getAllUrl: String = 'http://localhost/connect.php';
   addOneUrl: String = 'http://localhost/addItem.php';
   deleteOneUrl: String = 'http://localhost/delete.php';
+  editOneUrl: String = 'http://localhost/edit.php';
+
 
   // Constructor creates a http dependency
   constructor(private http: HttpClient) { }
@@ -37,9 +40,16 @@ export class BackendService {
   }
 
   deleteOne(data: any) {
-    console.log(JSON.stringify(data));
     return this.http.post(`${this.deleteOneUrl}`, JSON.stringify(data), {responseType: 'text'}).pipe(
       map((res: any) => {
+        return res;
+      })
+    )
+  }
+
+  editOne(data: Shoes) {
+    return this.http.post(`${this.editOneUrl}`, JSON.stringify(data), {responseType: 'text'}).pipe(
+      map((res) => {
         return res;
       })
     )

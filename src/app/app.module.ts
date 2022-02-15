@@ -23,7 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { CmsComponent } from './cms/cms.component';
 import { MatTableModule } from '@angular/material/table';
-import { AddFormComponent } from './add-form/add-form.component'
+import { AddFormComponent } from './add-form/add-form.component';
+import { EditFormComponent } from './edit-form/edit-form.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AddFormComponent } from './add-form/add-form.component'
     RegisterComponent,
     LoginComponent,
     CmsComponent,
-    AddFormComponent
+    AddFormComponent,
+    EditFormComponent
   ],
   imports: [
     BrowserModule,
