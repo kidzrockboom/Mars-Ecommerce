@@ -12,6 +12,7 @@ export class BackendService {
 
   // Urls for the each serverSide script 
   getAllUrl: String = 'http://localhost/connect.php';
+  getMenUrl: String = 'http://localhost/men.php';
   addOneUrl: String = 'http://localhost/addItem.php';
   deleteOneUrl: String = 'http://localhost/delete.php';
   editOneUrl: String = 'http://localhost/edit.php';
@@ -24,6 +25,14 @@ export class BackendService {
   // Function to get all data from the shoes and format it with rxjs map
   getAll() {
     return this.http.get(`${this.getAllUrl}`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  getMen() {
+    return this.http.get(`${this.getMenUrl}`).pipe(
       map((res: any) => {
         return res;
       })

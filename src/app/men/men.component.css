@@ -1,0 +1,57 @@
+
+/* Keep all the  */
+.card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 170px; 
+    background-color: white;
+}
+
+.displaySelect{
+    display: flex;
+    margin-right: 30px;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.mat-drawer-container {
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sideNav {
+    padding: 20px;
+}
+
+.seperator {
+    display: flex;
+    justify-content: space-evenly;
+    height: 70px;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.seperator p {
+    padding-left: 40px;
+    padding-top: 23px;
+    color: azure;
+    font-size: 25px;
+}
+
+mat-card img{
+    height: 375px;
+    width: 375px;
+}
+
+.nav-cards {
+    max-width: 425px;
+    max-height: fit-content;
+    margin-left: 2rem;
+}

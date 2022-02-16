@@ -2,24 +2,47 @@
 <app-navbar></app-navbar>
 
 <div class="seperator">
-    <p>
-       THE BEST IN FOOTWARE SELECTIONS
-    </p>
+  <p>THE BEST IN FOOTWEAR SELECTIONS</p>
 </div>
 
+<div class="displaySelect">
 
-<div class="card-container">
+  <h2>{{types.selectedOptions.selected[0]?.value}} Shoes </h2>
 
-
-<div *ngFor="let shoe of shoes">
-<mat-card class="nav-cards" >
-  <img mat-card-image src="{{shoe.image}}"  alt="{{shoe.name}}">
-  <mat-card-content>
-    <h2>
-      {{shoe.name}}
-    </h2>
-  </mat-card-content>
-</mat-card>
+  <button type="button" mat-button (click)="drawer.toggle()">
+    Sort Menu
+  </button>
 </div>
 
-</div>
+<mat-drawer-container autosize class="drawerContainer">
+  <mat-drawer class="sideNav" #drawer mode="side" autoFocus="false">
+    <h3>Filter Items </h3>
+
+    <mat-selection-list #types [multiple]="false">
+      <mat-list-option *ngFor="let type of shoeType" [value]="type">
+        {{type}}
+      </mat-list-option>
+    </mat-selection-list>
+
+    
+  </mat-drawer>
+
+  <div class="card-container">
+    <div class="cards" *ngFor="let shoe of shoes">
+      <mat-card class="nav-cards">
+        <img mat-card-image src="{{ shoe.image }}" alt="{{ shoe.name }}" />
+        <mat-card-content>
+          <h2>
+            {{ shoe.name }}
+          </h2>
+          <p>
+            {{ shoe.price | currency }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="primary">Add to Cart</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</mat-drawer-container>

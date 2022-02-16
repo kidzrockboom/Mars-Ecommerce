@@ -10,9 +10,14 @@ import { Shoes } from '../shoe';
 })
 export class MenComponent implements OnInit {
 
-  constructor(private backendService: BackendService) { }
+
+
+  constructor(private backendService: BackendService) {
+    
+   }
 
   shoes: Shoes[]= [];
+  shoeType = new Set();
   success = "";
   error = "";
 
@@ -21,9 +26,12 @@ export class MenComponent implements OnInit {
   }
 
   getShoes() {
-    this.backendService.getAll().subscribe({
+    this.backendService.getMen().subscribe({
       next: (data: Shoes[]) => {
         this.shoes = data;
+        data.forEach(shoe => {
+          this.shoeType.add(shoe.type || '');
+        });
         this.success = "Got all the shoes";
       },
       error: (err) => {
@@ -32,5 +40,6 @@ export class MenComponent implements OnInit {
       }
     })
   }
+  
 
   }
