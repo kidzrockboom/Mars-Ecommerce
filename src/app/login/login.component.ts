@@ -19,6 +19,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  
+  loading = false;
+  success = false;
+  failure = false;
+  feedback: String = "";
+
   regForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, public backEndApi: BackendService) { 
@@ -44,7 +50,15 @@ export class LoginComponent implements OnInit {
 
     this.backEndApi.login(details).subscribe({
       next: (res) => {
-        console.log(res);
+        this.feedback = res;
+        if(this.feedback.trim() === "Log in Successful."){
+          this.success = true;
+        } else if(this.feedback.trim() == "Email Incorrect") {
+          this.failure = true;
+        } else {
+          this.failure = true;
+        }
+          
       },
       error: (err) => {
         console.log(err);

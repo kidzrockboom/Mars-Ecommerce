@@ -27,7 +27,8 @@ import { AddFormComponent } from './add-form/add-form.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { SearchComponent } from './search/search.component'
+import { SearchComponent } from './search/search.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -63,7 +64,7 @@ import { SearchComponent } from './search/search.component'
     MatSidenavModule,
     MatListModule
   ],
-  providers: [NgbCarouselConfig],
+  providers: [NgbCarouselConfig, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

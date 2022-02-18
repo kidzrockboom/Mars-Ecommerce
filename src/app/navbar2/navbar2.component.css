@@ -6,3 +6,15 @@
     margin-top: 5px;
     margin-right: 5px;  
 }
+
+.user {
+    display: flex;
+}
+
+.user > * {
+    display: flex;
+}
+
+#user {
+    margin-left: -50rem;
+}

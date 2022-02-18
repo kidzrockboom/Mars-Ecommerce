@@ -3,7 +3,7 @@
 
     <h2> Login</h2>
 
-<form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="regForm" (ngSubmit)="onSubmit()"[hidden]="success">
 
     <!-- value: {{regForm.value | json }} -->
 
@@ -31,7 +31,15 @@
 
 
 </form>
+<br>
 
+  <div class="displayFailure" *ngIf="failure">
+    <h2> {{feedback}} </h2>
+  </div>
+
+  <div class="displaySuccess" *ngIf="success">
+    <h2> {{feedback}} </h2>
+  </div>
 
 
 </div>

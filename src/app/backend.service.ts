@@ -20,6 +20,11 @@ export class BackendService {
   registerUrl: String = 'http://localhost/register.php';
   searchUrl: String = 'http://localhost/search.php';
   loginUrl: String = 'http://localhost/login.php';
+  logOutUrl: String = 'http://localhost/logOut.php';
+  getUserUrl: String = 'http://localhost/getUser.php';
+  checkOutUrl: String = 'http://localhost/checkOut.php';
+  addBasketUrl: String = 'http://localhost/addBasket.php';
+
 
 
   // Constructor creates a http dependency
@@ -28,7 +33,7 @@ export class BackendService {
 
   // Function to get all data from the shoes and format it with rxjs map
   getAll() {
-    return this.http.get(`${this.getAllUrl}`).pipe(
+    return this.http.get(`${this.getAllUrl}`, {withCredentials: true}).pipe(
       map((res: any) => {
         return res;
       })
@@ -36,7 +41,7 @@ export class BackendService {
   }
 
   getMen() {
-    return this.http.get(`${this.getMenUrl}`).pipe(
+    return this.http.get(`${this.getMenUrl}`, {withCredentials: true}).pipe(
       map((res: any) => {
         return res;
       })
@@ -44,7 +49,8 @@ export class BackendService {
   }
 
   addOne(data: any) {
-    return this.http.post(`${this.addOneUrl}`, data, {responseType: 'text'}).pipe(
+    return this.http.post(`${this.addOneUrl}`, data, 
+    {responseType: 'text', withCredentials: true},).pipe(
       map((res: any) => {
         return res;
       })
@@ -69,7 +75,8 @@ export class BackendService {
   }
 
   register(value: object) {
-    return this.http.post(`${this.registerUrl}`, JSON.stringify(value), {responseType: 'text'}).pipe(
+    return this.http.post(`${this.registerUrl}`, JSON.stringify(value), 
+    {responseType: 'text', withCredentials: true}).pipe(
       map(res => {
         return res.trim();
       })
@@ -78,7 +85,8 @@ export class BackendService {
 
   search(value: string) {
     let param = new HttpParams().set("search", value);
-    return this.http.get(`${this.searchUrl}`, {params: param, responseType: 'json'}).pipe(
+    return this.http.get(`${this.searchUrl}`, {params: param, responseType: 'json',
+     withCredentials: true}).pipe(
       map(res => {
         return res;
       })
@@ -86,7 +94,40 @@ export class BackendService {
   }
 
   login(value: any) {
-    return this.http.post(`${this.loginUrl}`, JSON.stringify(value), {responseType: 'text'}).pipe(
+    return this.http.post(`${this.loginUrl}`, JSON.stringify(value), {responseType: 'text', withCredentials: true}).pipe(
+      map(res => {
+        return res;
+      })
+    )
+  }
+
+  addBasket(value: String){
+    return this.http.post(`${this.addBasketUrl}`, value, {responseType: 'json', withCredentials: true}).pipe(
+      map(res => {
+        return res;
+      })
+    )
+
+  }
+
+  checkOut(){
+    return this.http.get(`${this.checkOutUrl}`, {responseType: 'text', withCredentials: true}).pipe(
+      map(res => {
+        return res;
+      })
+    )
+  }
+
+  logOut(){
+    return this.http.get(`${this.logOutUrl}`, {responseType: 'text', withCredentials: true}).pipe(
+      map(res => {
+        return res;
+      })
+    )
+  }
+
+  getUser(){
+    return this.http.get(`${this.getUserUrl}`, {responseType: 'text', withCredentials: true}).pipe(
       map(res => {
         return res;
       })

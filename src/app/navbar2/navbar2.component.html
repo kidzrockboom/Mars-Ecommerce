@@ -3,6 +3,12 @@
    
 
     <nav class="nav justify-content-end">
+        <div class="user">
+            <mat-list id="user"> 
+                <p> WELCOME, {{userName}}</p> 
+                <button mat-button [hidden]="showLogout" (click)="logout()"> Logout </button>
+            </mat-list>
+        </div>
         <button mat-button (click)="openLogin()"> Login </button>       
         <button mat-button (click)="openRegister()"> Register </button>
     </nav>
