@@ -21,3 +21,9 @@ mat-form-field {
 .ng-valid.required {
     background-color: lightgreen;
 }
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

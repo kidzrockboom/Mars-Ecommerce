@@ -26,7 +26,8 @@ import { MatTableModule } from '@angular/material/table';
 import { AddFormComponent } from './add-form/add-form.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list'
+import { MatListModule } from '@angular/material/list';
+import { SearchComponent } from './search/search.component'
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { MatListModule } from '@angular/material/list'
     LoginComponent,
     CmsComponent,
     AddFormComponent,
-    EditFormComponent
+    EditFormComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

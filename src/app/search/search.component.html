@@ -1,7 +1,7 @@
 <app-navbar2></app-navbar2>
-<app-navbar></app-navbar>
+<app-navbar (items)="receive($event)"></app-navbar>
 
-<div class="seperator">
+<div class="loginHeader">
   <p>THE BEST IN FOOTWEAR SELECTIONS</p>
 </div>
 
@@ -19,8 +19,8 @@
     <h3>Filter Items </h3>
 
     <mat-selection-list #types [multiple]="false">
-      <mat-list-option onclick="onFilter(value)"> <!-- Add an on click to the whole element-->
-        <button mat-button (click)="onFilter()"> </button> 
+      <mat-list-option  onclick="onFilter()">
+        <button mat-button (click)="onFilter()">  </button> 
       </mat-list-option>
     </mat-selection-list>
 

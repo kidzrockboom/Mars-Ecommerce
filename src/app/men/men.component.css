@@ -11,10 +11,16 @@
 .displaySelect{
     display: flex;
     margin-right: 30px;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-between;
 }
 
+.mat-button {
+    font-size: large;
+}
+
+.sortBtn {
+    display: flex;
+}
 
 .mat-drawer-container {
     background-color: white;

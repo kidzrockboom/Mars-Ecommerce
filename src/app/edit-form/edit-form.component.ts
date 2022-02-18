@@ -50,7 +50,7 @@ export class EditFormComponent implements OnInit {
 
     let formValues = this.editForm.value;
 
-    const formData = {id : this.localData._id.$oid, formValues}
+    const formData = {id : this.localData._id.$oid, formValues};
     
     this.backEndService.editOne(formData).subscribe({
       next: (res) => {

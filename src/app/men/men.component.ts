@@ -30,7 +30,8 @@ export class MenComponent implements OnInit {
       next: (data: Shoes[]) => {
         this.shoes = data;
         data.forEach(shoe => {
-          this.shoeType.add(shoe.type || '');
+          if(shoe.stock || 0 > 0)
+            this.shoeType.add(shoe.type || '');
         });
         this.success = "Got all the shoes";
       },
@@ -39,6 +40,11 @@ export class MenComponent implements OnInit {
         this.error = err;
       }
     })
+  }
+
+  onFilter() {
+    console.log();
+
   }
   
 

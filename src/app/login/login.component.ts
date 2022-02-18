@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BackendService } from '../backend.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   regForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder, public backEndApi: BackendService) { 
     this.regForm = this.createFormGroup();
 
   }
@@ -39,7 +40,17 @@ export class LoginComponent implements OnInit {
  
   // validate login information with the database
   onSubmit() {
-    
+    let details = this.regForm.value;
+
+    this.backEndApi.login(details).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+     
   }
 
 }

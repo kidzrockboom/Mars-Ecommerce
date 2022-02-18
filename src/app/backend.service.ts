@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Shoes } from './shoe';
+import { HttpParams } from '@angular/common/http';
 
 
 
@@ -16,6 +17,9 @@ export class BackendService {
   addOneUrl: String = 'http://localhost/addItem.php';
   deleteOneUrl: String = 'http://localhost/delete.php';
   editOneUrl: String = 'http://localhost/edit.php';
+  registerUrl: String = 'http://localhost/register.php';
+  searchUrl: String = 'http://localhost/search.php';
+  loginUrl: String = 'http://localhost/login.php';
 
 
   // Constructor creates a http dependency
@@ -59,6 +63,31 @@ export class BackendService {
   editOne(data: Shoes) {
     return this.http.post(`${this.editOneUrl}`, JSON.stringify(data), {responseType: 'text'}).pipe(
       map((res) => {
+        return res;
+      })
+    )
+  }
+
+  register(value: object) {
+    return this.http.post(`${this.registerUrl}`, JSON.stringify(value), {responseType: 'text'}).pipe(
+      map(res => {
+        return res.trim();
+      })
+    )
+  }
+
+  search(value: string) {
+    let param = new HttpParams().set("search", value);
+    return this.http.get(`${this.searchUrl}`, {params: param, responseType: 'json'}).pipe(
+      map(res => {
+        return res;
+      })
+    )
+  }
+
+  login(value: any) {
+    return this.http.post(`${this.loginUrl}`, JSON.stringify(value), {responseType: 'text'}).pipe(
+      map(res => {
         return res;
       })
     )
